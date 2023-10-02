@@ -1,30 +1,26 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using MVC_Games.Settings;
 @model CreateGameFromViewModel
 <h2>
-    </h2>
-<div class="d-flex justify-content-center" >
-    <form asp-action="create" class="w-50" enctype="multipart/form-data">
+</h2>
+<div class="d-flex justify-content-center">
+    <form asp-action="create" class="col-sm-6" enctype="multipart/form-data">
         <div class="form-group mt-2">
             <label asp-for="Name" class="mb-1 text-info"></label>
-            <input class="form-control"  asp-for="Name" />
+            <input class="form-control" asp-for="Name" />
             <span asp-validation-for="Name" class="text-danger"></span>
 
-           </div>
+        </div>
         <div class="form-group mt-2">
             <label asp-for="CategoryId" class="mb-1 text-info"></label>
             <select asp-for="CategoryId" class="form-select rounded" asp-items="Model.Categories">
-                <option></option>
-                </select>
+                <option value="">Select Category</option>
+            </select>
             <span asp-validation-for="CategoryId" class="text-danger"></span>
         </div>
         <div class="form-group mt-2">
             <label asp-for="SelectedDevices" class="mb-1 text-info"></label>
-            <select asp-for="CategoryId" class="form-select mt-2" multiple asp-items="Model.Devices">
-                <option></option>
+            <select asp-for="SelectedDevices" class="form-select mt-2" multiple asp-items="Model.Devices">
+                <option>Select Devices</option>
             </select>
             <span asp-validation-for="SelectedDevices" class="text-danger"></span>
         </div>
@@ -35,12 +31,26 @@
         </div>
         <div class="form-group mt-2">
             <label asp-for="Cover" class="mb-1 text-info"></label>
-            <input type="file" class="form-control" asp-for="Cover" />
-             <small class="d-block mt-1 mb-1">Only .jpg .png .jpes files are allowed with max size 1MB</small>
-            <span asp-validation-for="Cover" class="text-danger "></span>
+            <input id="cover" type="file" class="form-control" asp-for="Cover"
+                   data-rule-extension="@FileSettings.AllowedExtensions.Replace(".",string.Empty)"
+                   data-msg-extension="Not allowed extension"
+                   data-rule-filesize="@FileSettings.MaxFileSizeInBytes"
+                   data-msg-filesize="Maximum allowed size is @FileSettings.MaxFileSizeInMB" MB />
+            <small class="d-block mt-1 mb-1">Only @FileSettings.AllowedExtensions files are allowed with max size (@FileSettings.MaxFileSizeInMB) MB</small>
+            <span id="reloadContent" asp-validation-for="Cover" class="text-danger "></span>
         </div>
-        <input type="submit" value="CreateNew" class="btn btn-success mt-3"  />
+        <input type="submit" value="CreateNew" class="btn btn-success mt-3" />
 
-@*         <a type="submit" class="btn btn-success" asp-action="Index" asp-controller="Devices">Create</a>
- *@       </form>
+        @*         <a type="submit" class="btn btn-success" asp-action="Index" asp-controller="Devices">Create</a>
+        *@
+    </form>
+    <div  class="col-sm-6 mx-2 d-flex justify-content-center" style="align-items:center">
+        <img style="max-height:500px"  id="prev" class="d-none" width="200" height="200" alt="cover" />
     </div>
+</div>
+    @section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/game-form.js" asp-append-version="true"></script>
+    <script src="~/js/filesize-validator..js" asp-append-version="true"></script>
+    }
+

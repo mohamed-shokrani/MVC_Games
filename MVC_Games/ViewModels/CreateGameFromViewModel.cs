@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using MVC_Games.Attributes;
+using MVC_Games.Settings;
 using System.ComponentModel.DataAnnotations;
 
 namespace MVC_Games.ViewModels
@@ -11,6 +13,7 @@ namespace MVC_Games.ViewModels
         public string Description { get; set; } = string.Empty;
 
         [Required]
+        [AllowedExtensions(FileSettings.AllowedExtensions),MaxFileSize(FileSettings.MaxFileSizeInBytes)]
         public IFormFile Cover { get; set; } = default!;
 
         [Display (Name = "Category")]
