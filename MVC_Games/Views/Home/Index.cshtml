@@ -1,8 +1,39 @@
-﻿@{
+﻿@using MVC_Games.Settings;
+@{
     ViewData["Title"] = "Home Page";
 }
-
+@model IEnumerable<Game>
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-dismissible alert-info">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+    </div>
+}
+else
+{
+  
+    <div>
+       
+        @foreach (var item in Model)
+        {
+
+            <div class="card border-info mb-3" style="max-width: 20rem;">
+                <div class="card-body" style="background-image:url(@($"{FileSettings.ImagesPath}/{item.Cover}")">
+                   <div class="h-100">
+                        <div class="badge bg-secondary rounded-1 text-light">
+                            @item.Category?.Name
+
+                        </div>
+                   </div>
+                </div>
+                <footer class="card-footer">@item.Name</footer>
+            </div>
+         }
+    </div>
+}

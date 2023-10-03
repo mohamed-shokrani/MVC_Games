@@ -20,3 +20,189 @@ html {
 body {
   margin-bottom: 60px;
 }
+.select2-results__option {
+    background-color: rebeccapurple !important;
+    color:ghostwhite;
+}
+.select2-results__option {
+    padding: 30px;
+    max-width:60%;
+    margin-left: 1rem;
+    margin-top: 0.25rem;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: #28282c8a !important;
+    border-radius: 9px;
+    margin-left: 1rem;
+    margin-top: 0.25rem;
+}
+
+.select2-results__options {
+    border-radius: 10px;
+    background-color: #863786 !important;
+}
+
+
+/*.select2-results__option {
+    background-color: #4c4c4c !important;
+    color: ghostwhite;
+}*/
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+user agent stylesheet
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.select2-results__options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+user agent stylesheet
+ul {
+    list-style-type: disc;
+}
+
+body {
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-body-color);
+    text-align: var(--bs-body-text-align);
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    --bs-breakpoint-xs: 0;
+    --bs-breakpoint-sm: 576px;
+    --bs-breakpoint-md: 768px;
+    --bs-breakpoint-lg: 992px;
+    --bs-breakpoint-xl: 1200px;
+    --bs-breakpoint-xxl: 1400px;
+}
+
+:root, [data-bs-theme=light] {
+    --bs-blue: #2a9fd6;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #e83e8c;
+    --bs-red: #c00;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #f80;
+    --bs-green: #77b300;
+    --bs-teal: #20c997;
+    --bs-cyan: #93c;
+    --bs-black: #000;
+    --bs-white: #fff;
+    --bs-gray: #555;
+    --bs-gray-dark: #222;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #adafae;
+    --bs-gray-500: #888;
+    --bs-gray-600: #555;
+    --bs-gray-700: #282828;
+    --bs-gray-800: #222;
+    --bs-gray-900: #212529;
+    --bs-primary: #2a9fd6;
+    --bs-secondary: #555;
+    --bs-success: #77b300;
+    --bs-info: #93c;
+    --bs-warning: #f80;
+    --bs-danger: #c00;
+    --bs-light: #222;
+    --bs-dark: #adafae;
+    --bs-primary-rgb: 42,159,214;
+    --bs-secondary-rgb: 85,85,85;
+    --bs-success-rgb: 119,179,0;
+    --bs-info-rgb: 153,51,204;
+    --bs-warning-rgb: 255,136,0;
+    --bs-danger-rgb: 204,0,0;
+    --bs-light-rgb: 34,34,34;
+    --bs-dark-rgb: 173,175,174;
+    --bs-primary-text-emphasis: #114056;
+    --bs-secondary-text-emphasis: #222222;
+    --bs-success-text-emphasis: #304800;
+    --bs-info-text-emphasis: #3d1452;
+    --bs-warning-text-emphasis: #663600;
+    --bs-danger-text-emphasis: #520000;
+    --bs-light-text-emphasis: #282828;
+    --bs-dark-text-emphasis: #282828;
+    --bs-primary-bg-subtle: #d4ecf7;
+    --bs-secondary-bg-subtle: #dddddd;
+    --bs-success-bg-subtle: #e4f0cc;
+    Show All Properties (66 more)
+}
+
+@media (min-width: 768px) html {
+    font-size: 16px;
+}
+
+html {
+    font-size: 14px;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.text-info {
+    --bs-text-opacity: 1;
+    color: #e439e4 !important;
+}
+
+element.style {
+}
+
+textarea.form-control {
+    min-height: calc(1.5em + .75rem + calc(0 * 2));
+}
+
+.form-control {
+    background: #adafae;
+}
+.select2-container--default .select2-selection--multiple, selection {
+    background: #adafae !important;
+}
+.select2-container--default .select2-selection--single {
+    background-color: #adafae;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+.select2-container--default .select2-selection--single {
+    background-color:#adafae !important;
+    border: 1px solid #6f42c1;
+    border-radius: 4px;
+}
+.select2-selection__arrow b {
+    border-color: indianred transparent transparent transparent !important;
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    height: 0;
+    left: 50%;
+    margin-left: -4px;
+    margin-top: -2px;
+    position: absolute;
+    top: 50%;
+    width: 0;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border: 1px solid #dd2b2b !important;
+    background: #b0afb0 !important;
+    color: ghostwhite !important;
+}

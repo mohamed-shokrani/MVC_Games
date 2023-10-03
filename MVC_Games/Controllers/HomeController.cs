@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVC_Games.Interfaces;
 using MVC_Games.Models;
 using System.Diagnostics;
 
@@ -6,17 +7,14 @@ namespace MVC_Games.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IGames _games;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IGames games)
         {
-            _logger = logger;
+            _games = games;
         }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public async Task<IActionResult> Index() => View(await _games.GetAll());
+  
 
         public IActionResult Privacy()
         {

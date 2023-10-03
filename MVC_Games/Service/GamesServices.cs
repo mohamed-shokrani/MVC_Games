@@ -20,9 +20,7 @@ public class GamesServices : IGames
         _imagesPath = $"{_webHostEnvironment.WebRootPath}{FileSettings.ImagesPath}";
     }
     public async Task<IReadOnlyList<Game>> GetAll()
-    {
-        return  await _db.Games.ToListAsync();
-    }
+        => await _db.Games.Include(x=>x.Category).AsNoTracking().ToListAsync();
     public async Task Create(CreateGameFromViewModel model)
     {
         var cover  = $"{Guid.NewGuid()}{Path.GetExtension(model.Cover.FileName)}";

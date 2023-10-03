@@ -40,7 +40,7 @@ namespace MVC_Games
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Games}/{action=Create}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }
